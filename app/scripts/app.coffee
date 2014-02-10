@@ -11,8 +11,5 @@ angular.module('appIdeasFrontApp', [
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
-      .when '/idea',
-		templateUrl: 'views/main.html'
-		controller: 'IdeaController'
       .otherwise
         redirectTo: '/'
