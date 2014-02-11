@@ -1,0 +1,28 @@
+<form action="#">
+	<input type="text" name="fulltext_search" value="" ng-model="query">
+	<select name="order_by" ng-model="order">
+		<option value="age">Newest</option>
+		<option value="name">Alphabetical</option>
+	</select>
+	<label ng-repeat="keyword in keywords">
+		<input type="checkbox" checklist-model="keyword_filter" checklist-value="keyword.id"> <span class="label label-default">{{ keyword.name }}</span>
+	</label>
+</form>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>{{ name }}</th>
+			<th>{{ description}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="idea in ideas | filter:query | orderBy:order">
+			<td>{{ idea.name }}</td>
+			<td>{{ idea.desc }}</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>{{ keyword_filter | json }}</p>
+<p>{{ ideas | json }}</p>
