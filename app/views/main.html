@@ -1,35 +1,44 @@
 <div class="header">
-  <ul class="nav nav-pills">
-    <li class="active"><a ng-href="#">AppIdeas</a></li>
-    <li><a ng-href="#">Keywords</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <!-- <h3 class="text-muted">app ideas front</h3> -->
+<ul class="nav nav-pills">
+  <li class="active"><a href="#">Appideas</a></li>
+  <li><a href="#">Ideas</a></li>
+  <li><a href="#">New Idea</a></li>
+</ul>
 </div>
 
-<!-- <div class="container-fluid"> -->
-  <div class="row-fluid">
-    <div class="span6">
-      <div class="well.sidebar-nav">
-        <ul ng-repeat="keyword in keywords">
-          <li>{{ keyword }}</li>
-        </ul>
+<div class="row marketing">
+      <div class="row-fluid">
+        <div class="col-md-2">
+        		<ul ng-repeat="keyword in keywords", class="nav nav-pills nav-stacked">
+        		  <li><a ng-href="#"><span class="badge pull-right">1</span>{{ keyword }}</a></li>
+        		  </ul>
+           </div>
+         </div>
+        
+       <div class="col-md-8">
+    		  <ul ng-repeat="idea in ideas">
+    		  	<li><a ng-href="#">{{ idea.name }}</a>{{ idea.desc }}</li>
+    		  	
+     			</ul>        
+     	  </div>
+
+        
+        <div class="col-md-2">
+        	    :)     
+        </div>
+        
       </div>
-    </div>
-    <div class="span3">
-      <ul ng-repeat="idea in ideas">
-        <li>
-          {{ idea.name }} {{ idea.desc }}
-        </li>
-      </ul>
-    </div>
-    <div class="span3">
-    </div>
-  </div>
-<!-- </div> -->
+      
+</div>
+
+      
 
 <div class="footer">
-  <p>♥ from the Yeoman team</p>
-</div>
+  <p>© tktl-appideas</p>
+</div> 
+
+
+
+
 
 
