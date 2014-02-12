@@ -17,12 +17,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="idea in ideas | filter:query | orderBy:order">
+		<tr ng-repeat="idea in ideas | filter:query | orderBy:order | ideaFilter:keyword_filter">
 			<td>{{ idea.name }}</td>
 			<td>{{ idea.desc }}</td>
+			<td ng-repeat="keyword in idea.keywords">{{ keyword.name }}</td>
 		</tr>
 	</tbody>
 </table>
-
-<p>{{ keyword_filter | json }}</p>
-<p>{{ ideas | json }}</p>
