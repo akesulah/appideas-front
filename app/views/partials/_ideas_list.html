@@ -1,28 +1,62 @@
-<form action="#">
-	<input type="text" name="fulltext_search" value="" ng-model="query">
-	<select name="order_by" ng-model="order">
-		<option value="age">Newest</option>
-		<option value="name">Alphabetical</option>
-	</select>
-	<label ng-repeat="keyword in keywords">
-		<input type="checkbox" checklist-model="keyword_filter" checklist-value="keyword.id"> <span class="label label-default">{{ keyword.name }}</span>
-	</label>
-</form>
+<div class="header">
+  <ul class="nav nav-pills">
+    <li><a ng-href="#"><b>AppIdeas</b></a></li>
+    <li><a ng-href="#">Keywords</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+</div>
 
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>{{ name }}</th>
-			<th>{{ description}}</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="idea in ideas | filter:query | orderBy:order">
-			<td>{{ idea.name }}</td>
-			<td>{{ idea.desc }}</td>
-		</tr>
-	</tbody>
-</table>
+<section>
+  <div class="row-fluid">
+    <div class="col-md-3">
+       <div class="well.sidebar-nav">
+        <ul ng-repeat="keyword in keywords">
+          <li><a ng-click="view_ideas_by_keyword(keyword.id)">{{ keyword.name }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <form action="#">
+        <input type="text" name="fulltext_search" value="" ng-model="query">
+        <select name="order_by" ng-model="order">
+          <option value="age">Newest</option>
+          <option value="name">Alphabetical</option>
+        </select>
+        <!-- <label ng-repeat="keyword in keywords">
+          <input type="checkbox" checklist-model="keyword_filter" checklist-value="keyword.id"> <span class="label label-default">{{ k$
+        </label> -->
+      </form>
+      <table class="table table-striped">
+	      <thead>
+		      <tr>
+			      <th>Name</th>
+			      <th>Description</th>
+		      </tr>
+	      </thead>
+	      <tbody>
+		      <tr ng-repeat="idea in ideas | filter:query | orderBy:order">
+			      <td>{{ idea.name }}</td>
+			      <td>{{ idea.desc }}</td>
+		      </tr>
+	      </tbody>
+      </table>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <ul>
+        <li>
+          Here is a comment
+        </li>
+      </ul>
+    </div>
+  </div>
+</section> 
 
+<footer class="footer">
+  <p>AppIdeas</p>
+</footer>
+</div>
+
+<!--
 <p>{{ keyword_filter | json }}</p>
 <p>{{ ideas | json }}</p>
+-->
