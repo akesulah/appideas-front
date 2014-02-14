@@ -1,5 +1,27 @@
-{{ idea | json }}
-
-<ul>
-	<li ng-repeat="keyword in idea.keywords"> {{ keyword.name }}</li>
+<div class="header">
+<ul class="nav nav-pills">
+  <li><a href="#">Appideas</a></li>
+  <li><a href="#/ideas">Ideas</a></li>
+  <li><a href="#/_idea_new">New Idea</a></li>
 </ul>
+</div>
+
+<div class="container">
+		<div class="col-md-2 column">
+		</div>
+		<div class="col-md-8 column">
+			<h3 class="text-left">
+				{{ idea.name }}
+			</h3>
+			<p>
+				{{ idea.desc }}
+			</p> 
+				<a href="#/ideas"><button type="button" class="btn btn-default">Back</button></a>
+				<a href="#/_idea_edit"><button type="button" class="btn btn-default">Edit</button></a>
+				<button type="button" class="btn btn-danger">Delete</button>		
+			</div>
+		<div class="col-md-2 column">
+	</div>
+</div>
+
+

@@ -1,8 +1,9 @@
+
 <div class="header">
 <ul class="nav nav-pills">
   <li class="active"><a href="#">Appideas</a></li>
-  <li><a href="#">Ideas</a></li>
-  <li><a href="#">New Idea</a></li>
+  <li><a href="#/ideas">Ideas</a></li>
+  <li><a href="#/_idea_new">New Idea</a></li>
 </ul>
 </div>
 
@@ -10,21 +11,21 @@
       <div class="row-fluid">
         <div class="col-md-2">
         		<ul ng-repeat="keyword in keywords", class="nav nav-pills nav-stacked">
-        		  <li><a ng-href="#"><span class="badge pull-right">1</span>{{ keyword }}</a></li>
+        		  <li><a ng-href="#"><span class="badge pull-right">1</span>{{ keyword.name }}</a></li>
         		  </ul>
            </div>
          </div>
         
        <div class="col-md-8">
     		  <ul ng-repeat="idea in ideas">
-    		  	<li><a ng-href="#">{{ idea.name }}</a>{{ idea.desc }}</li>
+    		  	<li><a href="#/ideas/{{idea.id}}">{{idea.name}}</a>{{ idea.desc }}</li>
     		  	
      			</ul>        
      	  </div>
 
         
         <div class="col-md-2">
-        	    :)     
+        	    Comments     
         </div>
         
       </div>

@@ -1,12 +1,28 @@
+<div class="header">
+<ul class="nav nav-pills">
+  <li><a href="#">Appideas</a></li>
+  <li class="active"><a href="#/ideas">Ideas</a></li>
+  <li><a href="#/_idea_new">New Idea</a></li>
+</ul>
+</div>
+
+<div class="row marketing">
+      <div class="row-fluid">
+        <div class="col-md-2">
+					<p><ul><label ng-repeat="keyword in keywords">
+					 <span class="label label-primary"><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id">  {{ keyword.name }}</span>
+					 &nbsp</label></ul></p>
+          </div>
+        </div>
+        
+       <div class="col-md-8">
+
 <form action="#">
 	<input type="text" name="fulltext_search" value="" ng-model="query">
 	<select name="order_by" ng-model="order">
 		<option value="age">Newest</option>
 		<option value="name">Alphabetical</option>
 	</select>
-	<label ng-repeat="keyword in keywords">
-		<input type="checkbox" checklist-model="keyword_filter" checklist-value="keyword.id"> <span class="label label-default">{{ keyword.name }}</span>
-	</label>
 </form>
 
 <table class="table table-striped">
@@ -18,9 +34,34 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="idea in ideas | filter:query | orderBy:order | ideaFilter:keyword_filter">
-			<td>{{ idea.name }}</td>
-			<td>{{ idea.desc }}</td>
+			<td><a ng-href="#/ideas/{{idea.id}}">{{ idea.name }}</a>
+			<p>{{ idea.desc }}</td>
 			<td ng-repeat="keyword in idea.keywords">{{ keyword.name }}</td>
 		</tr>
 	</tbody>
-</table>
+</table>        
+     	  </div>
+
+        
+        <div class="col-md-2">
+        </div>
+        
+      </div>
+      
+</div>
+
+      
+
+<div class="footer">
+  <p>© tktl-appideas</p>
+</div> 
+
+
+
+
+
+
+
+
+
+

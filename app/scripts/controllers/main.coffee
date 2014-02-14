@@ -6,13 +6,12 @@ angular.module('appIdeasFrontApp')
   .controller 'MainCtrl', ['$scope', '$http', ($scope, $http) ->
 
     $scope.ideas = []
-    $scope.keywords = [
-      'Mobiili'
-      'Startup'
-      'Competition'
-    ]
 
     $http.get('./api/ideas').success((data) ->
       $scope.ideas = data
+    )
+    
+    $http.get('./api/keywords').success((data) ->
+      $scope.keywords = data
     )
 ]

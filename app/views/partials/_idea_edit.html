@@ -1,0 +1,38 @@
+<div class="header">
+<ul class="nav nav-pills">
+  <li><a href="#">Appideas</a></li>
+  <li><a href="#/ideas">Ideas</a></li>
+  <li><a href="#/_idea_new">New Idea</a></li>
+</ul>
+</div>
+
+<div class="marketing">
+	<div class="row clearfix">
+		<div class="col-md-2 column">
+		</div>
+		<div class="col-md-8 column">
+			<form role="form">
+				<div class="form-group">
+					 <label for="IdeaName">Name </label><input class="form-control" id="IdeaName" type="text" />
+				</div>
+				<div class="form-group">
+					 <label for="IdeaDesc">Description </label><textarea input class="form-control" id="IdeaDesc" type="text" rows="6"/></textarea>
+				</div>
+				<div class="form-group">
+					<label for="Keyword">Keywords </label>
+					<p><label ng-repeat="keyword in keywords">
+					 <span class="label label-default"><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id">  {{ keyword.name }}</span>
+					 &nbsp</label></p>
+				</div>
+				<button type="submit" class="btn btn-default">Update Idea</button>
+				<a ng-href="#/ideas/{{idea.id}}"><button type="cancel" class="btn btn-default">Cancel</button></a>
+			</form>
+		</div>
+		<div class="col-md-2 column">
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+  <p>© tktl-appideas</p>
+</div> 
