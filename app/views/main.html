@@ -9,14 +9,14 @@
 
 <div class="row marketing">
       <div class="row-fluid">
-        <div class="col-md-2">
+        <div class="col-md-3">
         		<ul ng-repeat="keyword in keywords", class="nav nav-pills nav-stacked">
         		  <li><a ng-href="#"><span class="badge pull-right">1</span>{{ keyword.name }}</a></li>
         		  </ul>
            </div>
          </div>
         
-       <div class="col-md-8">
+       <div class="col-md-6">
     		  <ul ng-repeat="idea in ideas">
     		  	<li><a href="#/ideas/{{idea.id}}">{{idea.name}}</a>{{ idea.desc }}</li>
     		  	
@@ -24,7 +24,7 @@
      	  </div>
 
         
-        <div class="col-md-2">
+        <div class="col-md-3">
         	    Comments     
         </div>
         

@@ -1,16 +1,18 @@
 'use strict'
 
 angular.module('appIdeasFrontApp')
-  .controller 'IdeaEditCtrl', ($scope, $http) ->
+  .controller 'IdeaEditCtrl', ($scope, $routeParams, $http) ->
 
-    $http.get('api/ideas').success( (data) ->
-      $scope.ideas = data
+    $http.get("api/ideas/#{$routeParams.ideaId}").success( (data) ->
+      $scope.idea = data
     )
-
+    
     $http.get('api/keywords').success( (data) ->
       $scope.keywords = data
     )
 
-    $scope.order = "age"
-
-    $scope.keyword_filter = []
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate'
+      'AngularJS'
+      'Karma'
+    ]

@@ -11,3 +11,8 @@ angular.module('appIdeasFrontApp')
 
     $scope.keyword_filter = []
 
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate'
+      'AngularJS'
+      'Karma'
+    ]
