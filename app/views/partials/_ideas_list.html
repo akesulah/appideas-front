@@ -1,19 +1,17 @@
 <div class="header">
   <ul class="nav nav-pills">
     <li><a ng-href="#"><b>AppIdeas</b></a></li>
-    <li><a ng-href="#">Keywords</a></li>
-    <li><a ng-href="#">Contact</a></li>
+    <li><a ng-href="#">New Idea</a></li>
   </ul>
 </div>
 
 <section>
   <div class="row-fluid">
     <div class="col-md-3">
-       <div class="well.sidebar-nav">
-        <ul ng-repeat="keyword in keywords">
-          <li><a ng-click="view_ideas_by_keyword(keyword.id)">{{ keyword.name }}</a></li>
-        </ul>
-      </div>
+      <h4>All Keywords</h4>
+      <ul ng-repeat="keyword in keywords" id="keys">
+        <li class="list-unstyled"><a ng-click="view_ideas_by_keyword(keyword.id)">{{ keyword.name }}</a></li>
+      </ul>
     </div>
     <div class="col-md-6">
       <form action="#">
@@ -26,20 +24,16 @@
           <input type="checkbox" checklist-model="keyword_filter" checklist-value="keyword.id"> <span class="label label-default">{{ k$
         </label> -->
       </form>
-      <table class="table table-striped">
-	      <thead>
-		      <tr>
-			      <th>Name</th>
-			      <th>Description</th>
-		      </tr>
-	      </thead>
-	      <tbody>
-		      <tr ng-repeat="idea in ideas | filter:query | orderBy:order">
-			      <td>{{ idea.name }}</td>
-			      <td>{{ idea.desc }}</td>
-		      </tr>
-	      </tbody>
-      </table>
+      <br>
+      <ul ng-repeat="idea in ideas">
+        <li>
+          <b><a ng-href="#/ideas/{{idea.id}}">{{ idea.name }}</a></b><br>
+          {{ idea.desc }} <br>
+          <div class="btn-group" ng-repeat="keyword in idea.keywords">
+            <a class="btn btn-xs" href="#">{{ keyword.name }}</a>
+          </div>
+        </li>
+      </ul>
     </div>
     <div class="col-md-3 col-xs-12">
       <ul>

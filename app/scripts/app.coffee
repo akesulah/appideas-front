@@ -9,9 +9,6 @@ angular.module('appIdeasFrontApp', [
 ])
   .config ($routeProvider) ->
     $routeProvider
-      .when '/',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
       .when '/ideas',
         templateUrl: 'views/partials/_ideas_list.html'
         controller: 'IdeasCtrl'
@@ -19,4 +16,4 @@ angular.module('appIdeasFrontApp', [
         templateUrl: 'views/partials/_idea_details.html'
         controller: 'IdeaDetailsCtrl'
       .otherwise
-        redirectTo: '/'
+        redirectTo: '/ideas'
