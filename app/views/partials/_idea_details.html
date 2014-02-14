@@ -21,9 +21,9 @@
       </div>
     </div> 
     <div class="col-md-3 col-xs-12">
-      <ul>
+      <ul ng-repeat="comment in idea.comments">
         <li>
-          Here is a comment
+          {{ comment.body }}
         </li>
       </ul>
     </div>
