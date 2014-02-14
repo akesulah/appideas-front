@@ -12,7 +12,7 @@ angular.module('appIdeasFrontApp', [
       .when '/',
         templateUrl: 'views/partials/_ideas_list.html'
         controller: 'IdeasCtrl'
-      .when '/ideas',
+ 		  .when '/ideas',
         templateUrl: 'views/partials/_ideas_list.html'
         controller: 'IdeasCtrl'
       .when '/ideas/:ideaId',
@@ -25,4 +25,4 @@ angular.module('appIdeasFrontApp', [
         templateUrl: 'views/partials/_idea_edit.html'
         controller: 'IdeaEditCtrl'
       .otherwise
-        redirectTo: '/'
+        redirectTo: '/ideas'

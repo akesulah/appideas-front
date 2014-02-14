@@ -1,4 +1,5 @@
 <div class="header">
+<<<<<<< HEAD
 <ul class="nav nav-pills">
   <li><a href="#">Appideas</a></li>
   <li class="active"><a href="#/ideas">Ideas</a></li>
@@ -65,3 +66,60 @@
 
 
 
+=======
+  <ul class="nav nav-pills">
+    <li><a ng-href="#"><b>AppIdeas</b></a></li>
+    <li><a ng-href="#">New Idea</a></li>
+  </ul>
+</div>
+
+<section>
+  <div class="row-fluid">
+    <div class="col-md-3">
+      <h4>All Keywords</h4>
+      <ul ng-repeat="keyword in keywords" id="keys">
+        <li class="list-unstyled"><a ng-click="view_ideas_by_keyword(keyword.id)">{{ keyword.name }}</a></li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <form action="#">
+        <input type="text" name="fulltext_search" value="" ng-model="query">
+        <select name="order_by" ng-model="order">
+          <option value="age">Newest</option>
+          <option value="name">Alphabetical</option>
+        </select>
+        <!-- <label ng-repeat="keyword in keywords">
+          <input type="checkbox" checklist-model="keyword_filter" checklist-value="keyword.id"> <span class="label label-default">{{ k$
+        </label> -->
+      </form>
+      <br>
+      <ul ng-repeat="idea in ideas">
+        <li>
+          <b><a ng-href="#/ideas/{{idea.id}}">{{ idea.name }}</a></b><br>
+          {{ idea.desc }} <br>
+          <div class="btn-group" ng-repeat="keyword in idea.keywords">
+            <a class="btn btn-xs" href="#">{{ keyword.name }}</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <ul>
+        <li>
+          Here is a comment
+        </li>
+      </ul>
+    </div>
+  </div>
+</section> 
+
+<footer class="footer">
+  <p>AppIdeas</p>
+</footer>
+</div>
+
+<!--
+<p>{{ keyword_filter | json }}</p>
+<p>{{ ideas | json }}</p>
+-->
+>>>>>>> 684be8bcb7f4cd4d6bf47e953784a02d5a7f930f

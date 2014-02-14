@@ -1,27 +1,36 @@
 <div class="header">
-<ul class="nav nav-pills">
-  <li><a href="#">Appideas</a></li>
-  <li><a href="#/ideas">Ideas</a></li>
-  <li><a href="#/_idea_new">New Idea</a></li>
-</ul>
+  <ul class="nav nav-pills">
+    <li><a ng-href="#"><b>AppIdeas</b></a></li>
+    <li><a ng-href="#">New Idea</a></li>
+  </ul>
 </div>
 
-<div class="container">
-		<div class="col-md-2 column">
-		</div>
-		<div class="col-md-8 column">
-			<h3 class="text-left">
-				{{ idea.name }}
-			</h3>
-			<p>
-				{{ idea.desc }}
-			</p> 
-				<a href="#/ideas"><button type="button" class="btn btn-default">Back</button></a>
-				<a href="#/_idea_edit"><button type="button" class="btn btn-default">Edit</button></a>
-				<button type="button" class="btn btn-danger">Delete</button>		
-			</div>
-		<div class="col-md-2 column">
-	</div>
+<section>
+  <div class="row-fluid">
+    <div class="col-md-3">
+      <h4>All Keywords</h4>
+      <ul ng-repeat="keyword in keywords" id="keys">
+        <li><a ng-click="view_ideas_by_keyword(keyword.id)">{{ keyword.name }}</a></li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3>{{ idea.name }}</h3>
+      <p>{{ idea.desc }}</p>
+      <div class="btn-group" ng-repeat="keyword in idea.keywords">
+        <a class="btn btn-xs" href="#">{{ keyword.name }}</a>
+      </div>
+    </div> 
+    <div class="col-md-3 col-xs-12">
+      <ul>
+        <li>
+          Here is a comment
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>AppIdeas</p>
+</footer>
 </div>
-
-
