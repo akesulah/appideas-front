@@ -1,8 +1,8 @@
 <div class="header">
 <ul class="nav nav-pills">
-  <li><a href="#">Appideas</a></li>
-  <li class="active"><a href="#/ideas">Ideas</a></li>
-  <li><a href="#/idea/new">New Idea</a></li>
+	<li><a href="#">Appideas</a></li>
+	<li class="active"><a href="#/ideas">Ideas</a></li>
+	<li><a href="#/idea/new">New Idea</a></li>
 </ul>
 </div>
 
@@ -13,16 +13,16 @@
 		<div class="col-md-6 column">
 			<form role="form">
 				<div class="form-group">
-					 <label for="IdeaName">Name </label><textarea input class="form-control" id="IdeaName" type="text">{{ idea.name }}</textarea>
+					 <label for="IdeaName">Name </label><textarea input class="form-control" id="IdeaName" type="text" rows=1>{{ idea.name }}</textarea>
 				</div>
 				<div class="form-group">
 					 <label for="IdeaDesc">Description </label><textarea input class="form-control" id="IdeaDesc" type="text" rows="6" >{{ idea.desc }}</textarea>
 				</div>
 				<div class="form-group">
-					<label for="Keyword">Keywords </label>
 					<p><label ng-repeat="keyword in keywords">
-					 <span class="label label-default"><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id">  {{ keyword.name }}</span>
-					 &nbsp</label></p>
+					 <span class="label label-default"><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id">	 {{ keyword.name }}</span>
+					 &nbsp
+					</label></p>
 				</div>
 				<a ng-href="#/"><button type="edit" class="btn btn-default">Update Idea</button></a>
 				<a ng-href="#/ideas/{{idea.id}}"><button type="cancel" class="btn btn-default">Cancel</button></a>
@@ -34,5 +34,5 @@
 </div>
 
 <div class="footer">
-  <p>© tktl-appideas</p>
+	<p>© tktl-appideas</p>
 </div> 
