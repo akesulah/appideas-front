@@ -1,34 +1,51 @@
 <div class="header">
-<ul class="nav nav-pills">
-  <li><a href="#">Appideas</a></li>
-  <li class="active"><a href="#/ideas">Ideas</a></li>
-  <li><a href="#/idea/new">New Idea</a></li>
-</ul>
+	<ul class="nav nav-pills">
+		<li><a href="#">Appideas</a></li>
+		<li class="active"><a href="#/ideas">Ideas</a></li>
+		<li><a href="#/idea/new">New Idea</a></li>
+	</ul>
 </div>
 
 <div class="marketing">
 	<div class="row clearfix">
 		<div class="col-md-3 column">
-		      <h4>All Keywords</h4>
-      <ul ng-repeat="keyword in keywords" id="keys">
-        <li><a ng-click="view_ideas_by_keyword(keyword.id)">{{ keyword.name }}</a></li>
-      </ul>
-    </div>
+			<h4>All Keywords</h4>
+			<ul ng-repeat="keyword in keywords" id="keys">
+				<li><a ng-click="view_ideas_by_keyword(keyword.id)">{{ keyword.name }}</a>
+				</li>
+			</ul>
+		</div>
+		
 		<div class="col-md-6 column">
-      <h3>{{ idea.name }}</h3>
-      <p>{{ idea.desc }}</p>
-      <div class="btn-group" ng-repeat="keyword in idea.keywords">
-        <a class="btn btn-xs" href="#">{{ keyword.name }}</a>
-      </div>
-				<div class="form-group">
-					<label for="Keyword">Keywords </label>
-					<p><label ng-repeat="keyword in keywords">
-					 <span class="label label-default"><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id">  {{ keyword.name }}</span>
-					 &nbsp</label></p>
-				</div>
-				<a ng-href="#/ideas/{{idea.id}}/edit"><button type="submit" class="btn btn-default">Update Idea</button></a>
-				<a href="#/ideas"><button type="cancel" class="btn btn-default">Cancel</button></a>
-			</form>
+			<table>
+				<tr>
+					<td valign="baseline">
+  						<h3>
+  							<a class="glyphicon glyphicon-chevron-up" href="#">&nbsp</a>
+  							<p>
+ <!--idea.votes.size here.-->  							
+  							<p>
+  							<a class="glyphicon glyphicon-chevron-down" href="#"></a>
+  						</h3>
+					</td>
+					<td>
+						<h3>{{ idea.name }}</h3>
+						<p>{{ idea.desc }}</p>
+						<div class="form-group">
+							<label for="Keyword">Keywords 
+							</label>
+							<p>
+							<label ng-repeat="keyword in idea.keywords">
+								<span class="label label-primary"><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id" visibility: hidden> {{ keyword.name }}
+								</span>&nbsp
+							</label>
+						</div>
+							<a ng-href="#/ideas/{{idea.id}}/edit"><button type="submit" class="btn btn-default">Update Idea</button></a>
+							<a href="#/ideas"><button type="cancel" class="btn btn-default">Cancel</button></a>
+						</form>
+					</td>
+				</tr>
+			</table>
 		</div>
 		<div class="col-md-3 column" ng-controller="IdeaDetailsCtrl">
 		      <label>Comments </label>
@@ -46,7 +63,7 @@
 </div>
 
 <div class="footer">
-  <p>© tktl-appideas</p>
+	<p>© tktl-appideas</p>
 </div> 
 
 
