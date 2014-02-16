@@ -1,61 +1,70 @@
 <div class="header">
-	<ul class="nav nav-pills" >
-		<li><a href="#"><img src="images/yeoman.png" alt="" width="50" height="50"></a></li>
- <!--		<li><a href="#">Appideas</a></li> -->
-		<li class="active"><a href="#/ideas">Ideas</a></li>
-		<li><a href="#/idea/new">New Idea</a></li>
-	</ul>
+  <ul class="nav nav-pills" >
+    <li><a href="#"><img src="images/yeoman.png" alt="" width="50" height="50"></a></li>
+ <!--   <li><a href="#">Appideas</a></li> -->
+    <li class="active"><a href="#/ideas">Ideas</a></li>
+    <li><a href="#/idea/new">New Idea</a></li>
+  </ul>
 </div>
 
 
 <div class="row marketing">
-	<div class="row-fluid">
-		<div class="col-md-3">
-			<p>
-				<ul>
-					<label ng-repeat="keyword in keywords">
-						<span class="label label-primary" ><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id">	{{ keyword.name }}</span>&nbsp
-					</label>
-				</ul>
-			</p>
-		</div>
-	</div>
-				
-	<div class="col-md-6">
-		<form action="#">
-			<input type="text" name="fulltext_search" value="" ng-model="query">
-				<select name="order_by" ng-model="order">
-					<option value="age">Newest</option>
-					<option value="name">Alphabetical</option>
-				</select>
-		</form>
+  <div class="row-fluid">
+    <div class="col-md-3">
+      <p>
+        <ul>
+          <label ng-repeat="keyword in keywords">
+            <span class="label label-primary" ><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id"> {{ keyword.name }}</span>&nbsp
+          </label>
+        </ul>
+      </p>
+    </div>
+  </div>
+        
+  <div class="col-md-6">
+    <form action="#">
+      <input type="text" name="fulltext_search" value="" ng-model="query">
+        <select name="order_by" ng-model="order">
+          <option value="age">Newest</option> <!-- This shows at the moment from oldest to newest-->
+          <option value="name">Alphabetical</option>
+        </select>
+    </form>
 
-		<table class="table table-striped">
-			<tbody>
-				<tr ng-repeat="idea in ideas | filter:query | orderBy:order | ideaFilter:keyword_filter">
-					<td><a ng-href="#/ideas/{{idea.id}}">{{ idea.name }}</a>
-						<p>{{ idea.desc }}
-						<p>
-						<label ng-repeat="keyword in idea.keywords">
-							<span class="label label-primary"><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id" visibility: hidden>	{{ keyword.name }}
-							</span>&nbsp
-						</label>
-					</td>
-				</tr>
-			</tbody>
-		</table>				
-	</div>
+    <table class="table table-striped">
+      <tbody>
+        <tr ng-repeat="idea in ideas | filter:query | orderBy:order | ideaFilter:keyword_filter">
+        	<td>
+        		<h5>
+              <a class="glyphicon glyphicon-chevron-up" href="#">&nbsp</a>
+                <p>
+                	{{ idea.votes }}&nbsp    <!-- Not working. Should show number of votes.-->      
+                <p>
+              <a class="glyphicon glyphicon-chevron-down" href="#">&nbsp</a>
+            </h5>
+        	</td>
+          <td><a ng-href="#/ideas/{{idea.id}}">{{ idea.name }}</a>
+            <p>{{ idea.desc }}
+            <p>
+            <label ng-repeat="keyword in idea.keywords">
+              <span class="label label-primary"><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id" visibility: hidden> {{ keyword.name }}
+              </span>&nbsp
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>        
+  </div>
 
-				
-	<div class="col-md-3">
-	</div>
-				
+        
+  <div class="col-md-3">
+  </div>
+        
 </div>
-			
+      
 <div class="footer">
-	<p>
-		© tktl-appideas
-	</p>
+  <p>
+    © tktl-appideas
+  </p>
 </div> 
 
 
