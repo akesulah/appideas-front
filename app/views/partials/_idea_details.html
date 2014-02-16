@@ -30,15 +30,16 @@
 				<a href="#/ideas"><button type="cancel" class="btn btn-default">Cancel</button></a>
 			</form>
 		</div>
-		<div class="col-md-3 column">
+		<div class="col-md-3 column" ng-controller="IdeaDetailsCtrl">
 		      <label>Comments </label>
 			<table width="100%">
       <tr ng-repeat="comment in idea.comments">
           <td><i>{{ comment.body }}</i><hr></td>
       </tr></table>
       <div class="form-group">
-					<p><textarea input class="form-control" id="Comment" type="text" placeholder="Comment idea" rows="3"/></textarea></p>
-			 		<button type="button" class="btn btn-xs btn-default">Comment</button>		
+					<p><textarea input class="form-control" ng-model="newComment.comment" id="Comment" type="text" placeholder="Comment idea" rows="3"/></textarea>
+          <input type="hidden" mg-model="newComment.id" id="idea.id" true-value="idea.id"</p>
+			 		<button type="submit" ng-click="submitNewComment()" class="btn btn-xs btn-default">Comment</button>		
   		</div>
     </div> 
 	</div>
@@ -47,6 +48,5 @@
 <div class="footer">
   <p>© tktl-appideas</p>
 </div> 
-
 
 

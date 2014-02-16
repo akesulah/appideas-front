@@ -1,33 +1,17 @@
 'use strict'
 
 angular.module('appIdeasFrontApp')
-  .controller 'IdeaNewCtrl', ($scope, $http, $location) ->
+  .controller 'IdeaNewCtrl', ($scope, $http, $location, ideaFactory, keywordFactory) ->
 
-    $scope.Keyword = {}
-    $http.get('api/keywords').success( (data) ->
-      $scope.keywords = data
-    )
+    keywordFactory.getKeywords()
     
     $scope.submitNewIdea = ->
-      console.log($scope.Keyword)
-      data = $scope.newIdea
-      console.log(data)
-      $http.post "api/ideas", data
+      ideaFactory.saveIdea($scope.newIdea)
       $location.path('/ideas');
-    ###
-    $scope.submitNewIdea = ->
-      console.log($scope.idea)
-      data = $scope.idea
-      console.log(data)
-      $http.post('api/ideas', data).success(data)
-    ###
+
     $scope.order = "age"
 
     $scope.keyword_filter = []
 
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+
 
