@@ -33,15 +33,15 @@
     <table class="table table-striped">
       <tbody>
         <tr ng-repeat="idea in ideas | filter:query | orderBy:order | ideaFilter:keyword_filter">
-        	<td>
-        		<h5>
+          <td>
+            <h5>
               <a class="glyphicon glyphicon-chevron-up" href="#">&nbsp</a>
                 <p>
-                	{{ idea.votes }}&nbsp    <!-- Not working. Should show number of votes.-->      
+                  {{ idea.votes }}&nbsp    <!-- Not working. Should show number of votes.-->      
                 <p>
               <a class="glyphicon glyphicon-chevron-down" href="#">&nbsp</a>
             </h5>
-        	</td>
+          </td>
           <td><a ng-href="#/ideas/{{idea.id}}">{{ idea.name }}</a>
             <p>{{ idea.desc }}
             <p>

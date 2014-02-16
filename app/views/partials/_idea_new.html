@@ -7,30 +7,30 @@
 </div>
 
 <div class="marketing" ng-controller="IdeaNewCtrl">
-	<div class="row clearfix">
-		<div class="col-md-3 column">
-		</div>
-		<div class="col-md-6 column">
-			<form role="form">
-				<div class="form-group">
-					 <label for="IdeaName">Name </label><input ng-model="newIdea.name" class="form-control" id="IdeaName" type="text" placeholder="Name of your idea"/>
-				</div>
-				<div class="form-group">
-					 <label for="IdeaDesc">Description </label><textarea input ng-model="newIdea.desc" class="form-control" id="IdeaDesc" type="text" placeholder="Description of your idea" rows="6"/></textarea>
-				</div>
-				<div class="form-group">
-					<label for="Keyword">Keywords </label>
-					<p><label ng-repeat="keyword in keywords">
+  <div class="row clearfix">
+    <div class="col-md-3 column">
+    </div>
+    <div class="col-md-6 column">
+      <form role="form">
+        <div class="form-group">
+           <label for="IdeaName">Name </label><input ng-model="newIdea.name" class="form-control" id="IdeaName" type="text" placeholder="Name of your idea"/>
+        </div>
+        <div class="form-group">
+           <label for="IdeaDesc">Description </label><textarea input ng-model="newIdea.desc" class="form-control" id="IdeaDesc" type="text" placeholder="Description of your idea" rows="6"/></textarea>
+        </div>
+        <div class="form-group">
+          <label for="Keyword">Keywords </label>
+          <p><label ng-repeat="keyword in keywords">
             <span class="label label-default"><input type="checkbox" ng-model="Keyword[keyword.id]" value="keyword.id">  {{ keyword.name }}</span>
             &nbsp</label></p>
-				</div> 
-				<button type="submit" ng-click="submitNewIdea()" class="btn btn-default">Add Idea</button>
-				<a href="#/ideas"><button type="cancel" class="btn btn-default">Cancel</button></a>
-			</form>
-		</div>
-		<div class="col-md-3 column">
-		</div>
-	</div>
+        </div> 
+        <button type="submit" ng-click="submitNewIdea()" class="btn btn-default">Add Idea</button>
+        <a href="#/ideas"><button type="cancel" class="btn btn-default">Cancel</button></a>
+      </form>
+    </div>
+    <div class="col-md-3 column">
+    </div>
+  </div>
 </div>
 
 <div class="footer">
