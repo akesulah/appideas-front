@@ -7,7 +7,7 @@ angular.module('appIdeasFrontApp')
 
     keywordFactory.getKeywords()
 
-    $scope.order = "age"
+    $scope.order = "-id"
 
     $scope.keyword_filter = []
 

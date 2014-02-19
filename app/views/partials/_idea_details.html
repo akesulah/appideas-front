@@ -33,7 +33,7 @@
           </td>
           <td>
             <h3>{{ idea.name }}</h3>
-              <p ng-bind-html="idea.desc"></p>            
+              <p ng-bind-html="idea.limitedDesc"></p>            
               <div class="form-group">
               <label for="Keyword">Keywords 
               </label>
@@ -53,7 +53,7 @@
     <div class="col-md-3 column" ng-controller="IdeaDetailsCtrl">
           <label>Comments </label>
       <table width="100%">
-      <tr ng-repeat="comment in idea.comments">
+      <tr ng-repeat="comment in idea.comments | orderBy:'age'">
           <td><i>{{ comment.body }}</i><hr></td>
       </tr></table>
       <div class="form-group">

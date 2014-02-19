@@ -4,7 +4,7 @@
 <div class="header">
   <ul class="nav nav-pills" >
     <!-- <li><a href="#"><img src="images/yeoman.png" alt="" width="50" height="50"></a></li>-->
- 		<li><a href="#">Appideas</a></li>
+    <li><a href="#">Appideas</a></li>
     <li class="active"><a href="#/ideas">Ideas</a></li>
     <li><a href="#/idea/new">New Idea</a></li>
   </ul>
@@ -28,7 +28,8 @@
     <form action="#">
       <input type="text" name="fulltext_search" value="" ng-model="query">
         <select name="order_by" ng-model="order">
-          <option value="age">Newest</option> <!-- This shows at the moment from oldest to newest-->
+          <option value="id">Oldest</option> 
+          <option value="-id">Newest</option> 
           <option value="name">Alphabetical</option>
         </select>
     </form>
@@ -40,7 +41,7 @@
             <h5>
               <a class="glyphicon glyphicon-chevron-up" href="#">&nbsp</a>
                 <p>
-                	{{ idea.votes }}&nbsp         
+                  {{ idea.votes }}&nbsp         
                 <p>
               <a class="glyphicon glyphicon-chevron-down" href="#">&nbsp</a>
             </h5>
