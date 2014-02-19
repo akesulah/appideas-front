@@ -1,7 +1,10 @@
+<!-- Not a good solution. User can add own html while adding a new idea. But it works...--> 
+<div var myModule = angular.module('myModule', ['ngSanitize']);></div>
+
 <div class="header">
   <ul class="nav nav-pills" >
-    <li><a href="#"><img src="images/yeoman.png" alt="" width="50" height="50"></a></li>
- <!--   <li><a href="#">Appideas</a></li> -->
+    <!-- <li><a href="#"><img src="images/yeoman.png" alt="" width="50" height="50"></a></li>-->
+ 		<li><a href="#">Appideas</a></li>
     <li class="active"><a href="#/ideas">Ideas</a></li>
     <li><a href="#/idea/new">New Idea</a></li>
   </ul>
@@ -37,15 +40,14 @@
             <h5>
               <a class="glyphicon glyphicon-chevron-up" href="#">&nbsp</a>
                 <p>
-                	{{ idea.votes }}&nbsp    <!-- Not working. Should show number of votes.-->      
+                	{{ idea.votes }}&nbsp         
                 <p>
               <a class="glyphicon glyphicon-chevron-down" href="#">&nbsp</a>
             </h5>
           </td>
           <td><a ng-href="#/ideas/{{idea.id}}">{{ idea.name }}</a>
-            <p>{{ idea.desc }}
-            <p>
-            <label ng-repeat="keyword in idea.keywords">
+            <p ng-bind-html="idea.shortDesc"></p><a ng-href="#/ideas/{{idea.id}}"> Show more</a>
+            <p><label ng-repeat="keyword in idea.keywords">
               <span class="label label-primary"><input type="checkbox" checklist-model="Keyword" checklist-value="keyword.id" visibility: hidden> {{ keyword.name }}
               </span>&nbsp
             </label>
